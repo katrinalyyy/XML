@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Калькулятор</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Футер сверху -->
+  <div id="ga-header">
+    <!-- Кнопка "Профиль" -->
+    <div class="ga-header__tabs">
+      <a href="profile.html" data-transaction-name="ga-header" class="ga-header__tab ga-header__tab_type_profile ga-header__action">
+        <i class="ga-header__tab-icon">
+          <svg viewBox="0 0 25 25">
+            <path fill-rule="evenodd" stroke="none" d="M13 23.5c2.672 0 5.11-.998 6.963-2.641A8.096 8.096 0 0 0 13 16.9a8.096 8.096 0 0 0-6.963 3.96A10.46 10.46 0 0 0 13 23.5Zm0-8.1a9.591 9.591 0 0 1 8.04 4.353A10.457 10.457 0 0 0 23.5 13c0-5.799-4.701-10.5-10.5-10.5S2.5 7.201 2.5 13c0 2.572.925 4.928 2.46 6.753A9.592 9.592 0 0 1 13 15.4ZM25 13c0 3.15-1.214 6.017-3.2 8.158A11.968 11.968 0 0 1 13 25a11.963 11.963 0 0 1-5.968-1.587A11.995 11.995 0 0 1 1 13C1 6.373 6.373 1 13 1s12 5.373 12 12Zm-9.75-2.878a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm1.5 0a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd"></path>
+          </svg>
+        </i>
+      </a>
+    </div>
+    <!-- Кнопка "На главную" -->
+    <div class="ga-header__tabs">
+      <a data-transaction-name="ga-header" href="calculator.html" class="ga-header__tab ga-header__tab_type_main ga-header__action">
+        <i class="ga-header__tab-icon">
+          <svg stroke="none" viewBox="0 0 26 26">
+            <path fill-rule="evenodd" stroke="none" d="M13.73 9.31a4.8 4.8 0 0 1-.73 2.56 4.8 4.8 0 0 1-.73-2.56V9.1c0-.94.27-1.82.73-2.56.46.74.73 1.62.73 2.56v.21zm0 8.06c0 .94-.27 1.82-.73 2.56a4.81 4.81 0 0 1-.73-2.56v-.21c0-.94.27-1.82.73-2.56a4.8 4.8 0 0 1 .73 2.56v.21zM23 4.36V2.82h-6.14A6.05 6.05 0 0 0 13 4.24a6.06 6.06 0 0 0-3.87-1.42H3v1.54h6.13a4.5 4.5 0 0 1 2.82 1 6.38 6.38 0 0 0-1.23 3.78v.3c0 .6.08 1.18.23 1.73a5.96 5.96 0 0 0-1.84-.3H3v1.55h6.13c.95 0 1.84.3 2.58.81a4.47 4.47 0 0 1-2.58.82H3v1.7h6.1a6 6 0 0 0 1.85-.28 6.47 6.47 0 0 0-.23 1.73v.29c0 1.37.42 2.64 1.15 3.68a4.48 4.48 0 0 1-2.74.94H3v1.7h6.1A6.05 6.05 0 0 0 13 22.4a6.05 6.05 0 0 0 3.9 1.43H23v-1.7h-6.13a4.48 4.48 0 0 1-2.75-.95 6.38 6.38 0 0 0 1.17-3.68v-.29c0-.6-.09-1.18-.24-1.73a6.04 6.04 0 0 0 1.84.28H23v-1.7h-6.13c-.95 0-1.84-.3-2.58-.82a4.49 4.49 0 0 1 2.58-.81H23v-1.54h-6.1a5.97 5.97 0 0 0-1.86.29c.16-.56.25-1.14.25-1.74v-.29a6.39 6.39 0 0 0-1.24-3.78 4.49 4.49 0 0 1 2.82-1H23z" clip-rule="evenodd"></path>
+          </svg>
+        </i>
+      </a>
+    </div>
+    <!-- Кнопка "Избранное" но у меня это будет "Смена темы" -->
+    <div class="ga-header__tabs">
+      <button type="button" id="theme-toggle-heart" data-transaction-name="ga-header" class="ga-header__tab ga-header__tab_type_favorites ga-header__action">
+        <i class="ga-header__tab-icon">
+          <svg viewBox="0 0 25 25">
+            <path fill="none" stroke="currentColor" stroke-width="1.5" d="m11.963 5.067.537.55.536-.55c.585-.599 1.924-1.66 3.529-2.109 1.55-.432 3.346-.302 5.058 1.45 1.716 1.756 1.85 3.611 1.422 5.215-.44 1.652-1.482 3.026-2.066 3.624l-4.991 5.11-2.797 2.862-.691.708-.691-.708-2.797-2.863-4.99-5.109c-.585-.598-1.626-1.972-2.067-3.624-.427-1.604-.294-3.46 1.421-5.215 1.712-1.752 3.509-1.882 5.058-1.45 1.605.448 2.944 1.51 3.529 2.11Z"></path>
+          </svg>
+        </i>
+      </button>
+    </div>
+  </div>
+
+
+  <div class="content">
+    <!-- Контейнер для всего калькулятора -->
+    <div id="calculator">
+      <!-- блок с экраном калькулятора, где будет выводиться результат вычислений. -->
+      <div id="result" class="result">
+        0
+      </div>
+
+      <!-- блок с кнопками калькулятора. -->
+      <div>
+        <!-- кнопки калькулятора -->
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">  
+          <button id="btn_op_clear" class="my-btn secondary">C</button>
+          <button id="btn_op_sign" class="my-btn secondary">+/-</button>
+          <button id="btn_op_percent" class="my-btn secondary">%</button>
+          <button id="btn_op_div" class="my-btn secondary">/</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <button id="btn_op_sqrt" class="my-btn secondary">√</button>
+          <button id="btn_op_square" class="my-btn secondary">x²</button>
+          <button id="btn_op_factorial" class="my-btn secondary">x!</button>
+          <button class="my-btn" disabled style="width: 50px; height: 50px;"></button>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <button id="btn_digit_7" class="my-btn">7</button>
+          <button id="btn_digit_8" class="my-btn">8</button>
+          <button id="btn_digit_9" class="my-btn">9</button>
+          <button id="btn_op_mult" class="my-btn primary">x</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <button id="btn_digit_4" class="my-btn">4</button>
+          <button id="btn_digit_5" class="my-btn">5</button>
+          <button id="btn_digit_6" class="my-btn">6</button>
+          <button id="btn_op_minus" class="my-btn primary">-</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <button id="btn_digit_1" class="my-btn">1</button>
+          <button id="btn_digit_2" class="my-btn">2</button>
+          <button id="btn_digit_3" class="my-btn">3</button>
+          <button id="btn_op_plus" class="my-btn primary">+</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+          <button id="btn_digit_0" class="my-btn">0</button>
+          <button id="btn_digit_triple_zero" class="my-btn">000</button>
+          <button id="btn_digit_dot" class="my-btn">.</button>
+          <button id="btn_op_equal" class="my-btn primary execute">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Контейнер для цели ЛР -->
+  <footer>
+    <div class="footer-content">
+      <p>ЛР выполнена Лачиной Екатериной Андреевной</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
