@@ -1,0 +1,547 @@
+body {
+  font-family: "Courier New", monospace; /* Моноширинный шрифт */
+  font-weight: bold; /* Тонкий шрифт */
+  background-color: #121212; 
+  color: #ffffff;
+  display: flex; 
+  flex-direction: column; /* Элементы располагаются вертикально */
+  justify-content: space-between; /* Распределяет пространство между контентом и футером */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  
+  /* background-image: url('https://pcdn.goldapple.ru/p/mpb/363734633863623161393235613861343865366336646439/web/5f6d61696e5061676542616e6e65728dd5c16c829a961fullhd.png'); */
+  /* background-size: cover;  */
+  /* background-position: center; */
+  
+}
+
+.my-btn, .result, footer, #theme-text, .footer-content, #topFooter {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+#calculator {
+  background-color: #1e1e1e; /* Тёмный фон калькулятора */
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  margin-top: 70px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+  width: 240px;
+}
+
+/* Базовый стиль кнопки калькулятора */
+.my-btn {
+  margin-right: 5px;           /* отступ от кнопки справа */
+  margin-top: 5px;             /* отступ от кнопки сверху */
+  width: 50px;                 /* ширина кнопки */
+  height: 50px;                /* высота кнопки */
+  border-radius: 0%;          /* округляем кнопку */
+  border: none;                /* отключаем обводку */
+  background: #6d435a;         /* бордовый цвет кнопки */
+  color: rgb(255,255,255);           
+  font-size: 1.5rem;           /* размер шрифта */
+  cursor: pointer;             /* курсор в виде указателя */
+  user-select: none;           /* запрет выделения текста */
+  transition: background 0.2s; /* плавное изменение цвета */
+}
+
+/* Состояние при наведении */
+.my-btn:hover {
+  background-color: #666666; /* Светло-серый при наведении */
+}
+
+/* Состояние при нажатии */
+.my-btn:active {
+  filter: brightness(130%); /* эффект вспышки */
+}
+
+/* Кнопки первостепенных операций (+, -, *, /) */
+.my-btn.primary {
+  background: #e83f6f; /* ярко-розовый цвет */
+}
+
+.my-btn.primary:hover {
+  background-color: #ffaa33; /* Более яркий оранжевый при наведении */
+}
+
+/* Кнопки второстепенных операций (C, +/-, %) */
+.my-btn.secondary {
+  background: #b56576; /* розово-бордовый цвет */
+}
+
+.my-btn.secondary:hover {
+  background-color: #f56d9f; /* Более яркий оранжевый при наведении */
+}
+
+
+/* Кнопка расчета (=) */
+.my-btn.execute {
+  width: 110px;          /* шире других кнопок */
+  border-radius: 20px;   /* скругление углов */
+  background: #e83f6f;   /* ярко-розовый цвет */
+}
+
+.my-btn.execute:hover {
+  background-color: #ffaa33; /* Более яркий зелёный при наведении */
+}
+
+/* Стиль для неактивных кнопок */
+.my-btn:disabled {
+  background:#b56576; /* Тёмный серый цвет */
+  cursor: not-allowed; /* Курсор "недоступно" */
+}
+
+/* Поле вывода результата */
+.result {
+  width: 225px;
+  height: 70px;
+  margin-bottom: 15px;         /* отступ снизу */
+  padding-right: 10px;        /* отступ справа */
+  background: #4a2c40;       
+  text-align: right;          /* текст справа */
+  color: #ffffff;          
+  font-size: 2rem;
+  border-radius: 10px;        /* скругление углов */
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* внутренняя тень */
+}
+
+
+
+/* Стиль для светлой темы */
+body.light-theme {
+  background-color: rgb(255,255,255); /* Светлый фон */
+  color: #121212; /* Тёмный текст */
+}
+
+body.light-theme .result {
+  background-color: rgb(255,190,232); /* Светлый фон */
+  color: #121212; /* Тёмный текст */
+}
+
+body.light-theme #calculator {
+  background-color: rgb(255,255,255); /* Светлый фон калькулятора */
+}
+
+body.light-theme .my-btn {
+  background: rgb(255,190,232); /* Светлый цвет кнопок */
+  color: #121212; /* Тёмный текст */
+}
+
+body.light-theme .my-btn.primary {
+  background: rgb(178,254,40)
+}
+
+body.light-theme .my-btn.secondary {
+  background: rgb(178,254,40)
+}
+
+/* НИЖНИЙ ФУТЕР НЕ ПУТАТЬ  */
+footer {
+  width: 100%;
+  background-color: #1e1e1e; 
+  color: rgb(255,255,255); 
+  text-align: center;
+  padding-top: 0px;
+  flex: 0 0 auto; /* Футер не растягивается */
+  z-index: 1000; /* Чтобы футер был поверх других элементов */
+  height: 24px;
+  align-items: center; /* Центрируем текст по вертикали */
+}
+
+
+/* Стили для светлой темы */
+body.light-theme footer {
+  background-color: rgb(178,254,40); /* Светлый фон футера */
+  color: #121212; /* Тёмный текст */
+}
+
+#ga-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 0px 0;
+  z-index: 1000;
+  border-bottom: 2px solid #b0b0b0;
+  height: 70px;
+  display: flex;
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  align-items: center;
+}
+
+.ga-header__tabs {
+  display: flex;
+  align-items: center;
+}
+
+.ga-header__tab {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  padding: 0 15px;
+}
+
+.ga-header__tab:focus {
+  outline: none;
+}
+
+.ga-header__tab-icon {
+  width: 25px;
+  height: 25px;
+  color: rgb(0, 0, 0); /* Цвет иконки по умолчанию */
+  transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Цвет иконок по умолчанию в тёмной теме */
+body:not(.light-theme) .ga-header__tab-icon {
+  color: #e83f6f; /* Ярко-розовый цвет */
+  fill:  #e83f6f;
+}
+
+/* Цвет иконок по умолчанию в светлой теме */
+body.light-theme .ga-header__tab-icon {
+  color: #000000; /* Чёрный цвет */
+}
+
+.ga-header__tab:hover .ga-header__tab-icon {
+  color: rgb(198, 176, 159); /* Цвет иконки при наведении */
+  fill: rgb(198, 176, 159);
+}
+
+/* Стили для светлой темы */
+body.light-theme #ga-header {
+  background-color: rgb(255,255,255); /* Светлый фон */
+  color: #121212;             /* Темный текст */
+}
+
+
+
+
+/* Стили для кнопки GitHub */
+.github-button {
+  display: block; /* Делаем кнопку блочным элементом */
+  width: 160px; /* Ширина кнопки */
+  height: 160px; /* Высота кнопки */
+  margin-right: 500px;
+  margin-left: 500px;
+  margin-top: 115px;
+  border-radius: 50%; /* Закругляем углы */
+  overflow: hidden; /* Обрезаем содержимое, чтобы картинка не выходила за границы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные анимации */
+}
+
+.github-button img {
+  width: 100%; /* Картинка занимает всю ширину кнопки */
+  height: 100%; /* Картинка занимает всю высоту кнопки */
+  object-fit: cover; /* Масштабируем картинку, чтобы она заполнила кнопку */
+}
+
+/* Эффект при наведении */
+.github-button:hover {
+  transform: scale(1.05); /* Увеличиваем кнопку */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Увеличиваем тень */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравниваем элементы по центру по горизонтали */
+  justify-content: center; /* Выравниваем элементы по центру по вертикали */
+  text-align: center; /* Выравниваем текст по центру внутри элементов */
+  margin-top: 20px; /* Отступ сверху */
+  margin-bottom: 20px; /* Отступ снизу */
+  width: 100%; /* Занимает всю ширину */
+}
+
+#main-carousel {
+  margin-bottom: 30px; /* добавьте это */
+  max-width: 1400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100vw;          /* На всю ширину viewport */
+  height: 100vh;          /* 1/3 высоты viewport */
+  margin-left: -50vw;    /* Компенсация для центрирования */
+  left: 50%;             /* Центрирование */
+  position: relative;    /* Для позиционирования */
+  overflow: hidden;      /* Обрезаем выходящее за границы */
+}
+
+#main-carousel .carousel-inner,
+#main-carousel .carousel-item,
+#main-carousel .carousel-item img {
+  height: 100%;          /* Наследуем высоту */
+  object-fit: cover;     /* Заполнение пространства с сохранением пропорций */
+}
+
+#back-button {
+  position: absolute;
+  top: 150px; 
+  left: 100px;
+  z-index: 1000;
+  background-color: rgb(178,254,40);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+
+
+.btnbtn {
+  background-color: rgb(178,254,40);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 8px;
+
+}
+
+
+
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center; 
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  margin: 25px;
+  transition: transform 0.2s;
+}
+
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-page {
+  margin-top: 70px; /* отступ ровно под шапку */
+}
+
+
+/* белая полоска с адресом */
+#delivery-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* по центру */
+
+  width: 100%;
+
+  text-align: center;
+  margin-top: 9px;
+  padding: 5px 0;
+  font-family: sans-serif;
+}
+
+/* тонкая серая метка */
+.delivery-bar__label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #888;
+  margin-right: 6px;
+}
+
+/* жирный город */
+.delivery-bar__city {
+  font-size: 1rem;
+  font-weight: bold;
+  color:#e83f6f;
+}
+
+body.light-theme #delivery-bar {
+  background: #fff; /* Белый фон в светлой теме */
+  color: #000; /* Чёрный текст в светлой теме */
+}
+
+body.light-theme .delivery-bar__label {
+  color: #666; /* Тёмно-серый текст метки в светлой теме */
+}
+
+body.light-theme .delivery-bar__city {
+  color: #000; /* Чёрный текст города в светлой теме */
+}
+
+/* сама кнопка */
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 12px;     /* отступ от низа карточки */
+  right: 12px;      /* отступ от правого края */
+  width: 36px;      /* квадратная кнопка */
+  height: 36px;
+  padding: 0;       /* сбрасываем внутренние отступы */
+  border: none;
+  border-radius: 50%;     /* круг */
+  background-color: #666; /* серый фон */
+  color: #fff;            /* цвет иконки */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* размер иконки внутри */
+.add-to-cart-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor; /* чтобы подтянулся цвет из button */
+}
+
+/* цвет при наведении */
+.add-to-cart-btn:hover {
+  background-color: #f5e0b3; /* бежевый */
+}
+
+
+
+.product-page {
+  max-width: 1200px;
+  margin: 90px auto 50px;
+  padding: 0 20px;
+}
+
+.product-card {
+  display: flex;
+  gap: 40px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  flex: 1;
+}
+
+.product-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-details h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-volume {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.product-prices {
+  margin-bottom: 20px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.new-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e83f6f;
+}
+
+.price-note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.installment-plan {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.installment-plan a {
+  color: #e83f6f;
+  text-decoration: none;
+}
+
+.auth-note {
+  font-size: 14px;
+  color: #e83f6f;
+  margin-bottom: 30px;
+}
+
+.add-to-cart-btn-product {
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 15px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.add-to-cart-btn-product:hover {
+  background-color: #f5e0b3; 
+}
+
+.availability {
+  color: #e83f6f;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+body.light-theme .product-card {
+  background: #f8f8f8;
+}
+
+body.light-theme .product-details h1,
+body.light-theme .new-price {
+  color: #333;
+}
+
+.card-prices {
+  margin: 10px 0;
+}
+
+.card-old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.card-new-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e83f6f;
+}
+
+body.light-theme .card-new-price {
+  color: #d13562;
+}

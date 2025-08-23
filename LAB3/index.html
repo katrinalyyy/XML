@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple App</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Футер сверху -->
+    <div id="ga-header">
+        <!-- Кнопка "Профиль" -->
+        <div class="ga-header__tabs">
+        <a href="profile.html" data-transaction-name="ga-header" class="ga-header__tab ga-header__tab_type_profile ga-header__action">
+            <i class="ga-header__tab-icon">
+            <svg viewBox="0 0 25 25">
+                <path fill-rule="evenodd" stroke="none" d="M13 23.5c2.672 0 5.11-.998 6.963-2.641A8.096 8.096 0 0 0 13 16.9a8.096 8.096 0 0 0-6.963 3.96A10.46 10.46 0 0 0 13 23.5Zm0-8.1a9.591 9.591 0 0 1 8.04 4.353A10.457 10.457 0 0 0 23.5 13c0-5.799-4.701-10.5-10.5-10.5S2.5 7.201 2.5 13c0 2.572.925 4.928 2.46 6.753A9.592 9.592 0 0 1 13 15.4ZM25 13c0 3.15-1.214 6.017-3.2 8.158A11.968 11.968 0 0 1 13 25a11.963 11.963 0 0 1-5.968-1.587A11.995 11.995 0 0 1 1 13C1 6.373 6.373 1 13 1s12 5.373 12 12Zm-9.75-2.878a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm1.5 0a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd"></path>
+            </svg>
+            </i>
+        </a>
+        </div>
+        <!-- Кнопка "На главную" -->
+        <div class="ga-header__tabs">
+        <a data-transaction-name="ga-header" href="index.html" class="ga-header__tab ga-header__tab_type_main ga-header__action">
+            <i class="ga-header__tab-icon">
+            <svg stroke="none" viewBox="0 0 26 26">
+                <path fill-rule="evenodd" stroke="none" d="M13.73 9.31a4.8 4.8 0 0 1-.73 2.56 4.8 4.8 0 0 1-.73-2.56V9.1c0-.94.27-1.82.73-2.56.46.74.73 1.62.73 2.56v.21zm0 8.06c0 .94-.27 1.82-.73 2.56a4.81 4.81 0 0 1-.73-2.56v-.21c0-.94.27-1.82.73-2.56a4.8 4.8 0 0 1 .73 2.56v.21zM23 4.36V2.82h-6.14A6.05 6.05 0 0 0 13 4.24a6.06 6.06 0 0 0-3.87-1.42H3v1.54h6.13a4.5 4.5 0 0 1 2.82 1 6.38 6.38 0 0 0-1.23 3.78v.3c0 .6.08 1.18.23 1.73a5.96 5.96 0 0 0-1.84-.3H3v1.55h6.13c.95 0 1.84.3 2.58.81a4.47 4.47 0 0 1-2.58.82H3v1.7h6.1a6 6 0 0 0 1.85-.28 6.47 6.47 0 0 0-.23 1.73v.29c0 1.37.42 2.64 1.15 3.68a4.48 4.48 0 0 1-2.74.94H3v1.7h6.1A6.05 6.05 0 0 0 13 22.4a6.05 6.05 0 0 0 3.9 1.43H23v-1.7h-6.13a4.48 4.48 0 0 1-2.75-.95 6.38 6.38 0 0 0 1.17-3.68v-.29c0-.6-.09-1.18-.24-1.73a6.04 6.04 0 0 0 1.84.28H23v-1.7h-6.13c-.95 0-1.84-.3-2.58-.82a4.49 4.49 0 0 1 2.58-.81H23v-1.54h-6.1a5.97 5.97 0 0 0-1.86.29c.16-.56.25-1.14.25-1.74v-.29a6.39 6.39 0 0 0-1.24-3.78 4.49 4.49 0 0 1 2.82-1H23z" clip-rule="evenodd"></path>
+            </svg>
+            </i>
+        </a>
+        </div>
+
+        <!-- Лупа -->
+        <div class="ga-header__tabs">
+            <button 
+                type="button" 
+                id="finder"
+                data-transaction-name="ga-header" 
+                class="ga-header__tab ga-header__tab_type_search ga-header__action">
+                <div class="ga-header__tab-icon">
+                    <svg viewBox="0 0 25 25">
+                        <path fill="none" stroke="currentColor" stroke-width="1.5" d="m18 18 5 5"></path> 
+                        <circle cx="11.5" cy="11.5" r="8.5" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+                    </svg>
+                </div>
+            </button>
+        </div>    
+
+        <!-- Кнопка "Избранное" но у меня это будет "Смена темы" -->
+        <div class="ga-header__tabs">
+        <button type="button" id="theme-toggle-heart" data-transaction-name="ga-header" class="ga-header__tab ga-header__tab_type_favorites ga-header__action">
+            <i class="ga-header__tab-icon">
+            <svg viewBox="0 0 25 25">
+                <path fill="none" stroke="currentColor" stroke-width="1.5" d="m11.963 5.067.537.55.536-.55c.585-.599 1.924-1.66 3.529-2.109 1.55-.432 3.346-.302 5.058 1.45 1.716 1.756 1.85 3.611 1.422 5.215-.44 1.652-1.482 3.026-2.066 3.624l-4.991 5.11-2.797 2.862-.691.708-.691-.708-2.797-2.863-4.99-5.109c-.585-.598-1.626-1.972-2.067-3.624-.427-1.604-.294-3.46 1.421-5.215 1.712-1.752 3.509-1.882 5.058-1.45 1.605.448 2.944 1.51 3.529 2.11Z"></path>
+            
+            </svg>
+            </i>
+        </button>
+        </div>
+
+        <!-- Корзина -->
+        <div class="ga-header__tabs">
+            <button
+                type="button"
+                id="shop-cart"
+                data-transaction-name="ga-header"
+                class="ga-header__tab ga-header__tab_type_cart ga-header__action">
+                <div class="ga-header__tab-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span id="cart-counter" class="ga-header__cart-number">0</span>
+                </div>
+            </button>
+        </div>
+
+    </div>
+
+
+<div id="delivery-bar">
+    <span class="delivery-bar__label">АДРЕС ДОСТАВКИ</span>
+    <span class="delivery-bar__city">Москва</span>
+</div>
+
+
+<div id="root"></div>
+
+
+<script src="main.js" type="module"></script>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<footer>
+    <div class="footer-content">
+        <p>ЛР выполнена Лачиной Екатериной Андреевной</p>
+    </div>
+</footer>
+
+</body>
+</html>
