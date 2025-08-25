@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "src": "https://pcdn.goldapple.ru/p/p/99000046786/web/696d674d61696e5f63336362393932646662666234303864623365666337656232383863393563368dd54cc37a70ce2fullhd.webp",
+        "title": "MOIRA loveheat blush",
+        "price": "2069 ₽",
+        "discountedPrice": "1862 ₽",
+        "volume": "5.5 г"
+    },
+    {
+        "id": 2,
+        "src": "https://pcdn.goldapple.ru/p/p/19000082066/web/696d674d61696e8dc83a9f8cd1b28fullhd.webp",
+        "title": "DHC LIP CREAM",
+        "price": "1562 ₽",
+        "discountedPrice": "1405 ₽",
+        "volume": "1.5 г"
+    },
+    {
+        "id": 3,
+        "src": "https://pcdn.goldapple.ru/p/p/19000159585/web/696d674d61696e8dc8412ec372e9cfullhd.webp",
+        "title": "FOR ME by gold apple Tooth hair comb",
+        "price": "345 ₽",
+        "discountedPrice": "310 ₽",
+        "volume": "1 шт"
+    }
+]
